@@ -4,7 +4,7 @@ const menuBurger = document.querySelector(".menu_burger");
 
 const arr_opacity = document.querySelectorAll(".opacity");
 
-const menuSubList = document.querySelector(".menu_sub_list");
+const menuSubList = document.querySelector(".menu_sub_list"); 
 
 let count = 0;
 
@@ -37,6 +37,26 @@ for (let index = 0; index < arr_links.length; index++){
                     inline: "nearest",
                     behavior: "smooth"
                 });
+            };
+        };
+        event.preventDefault();
+    });
+};
+
+const arr_links_2 = document.querySelectorAll(".menu_sub_list_link");
+
+for (let index = 0; index < arr_links_2.length; index++){
+    arr_links_2[index].addEventListener("click", function(event) {
+        menuSubList.classList.remove("active");
+        for (let index_2 = 0; index_2 < arr_opacity.length; index_2++){
+            arr_opacity[index_2].classList.remove("opacity_2");
+            if (arr_links_2[index].textContent.toLowerCase() == arr_opacity[index_2].id.toLowerCase()){
+                arr_opacity[index_2].scrollIntoView({
+                    block: "start",
+                    inline: "nearest",
+                    behavior: "smooth"
+                });
+                Body.classList.remove("overflow");
             };
         };
         event.preventDefault();
