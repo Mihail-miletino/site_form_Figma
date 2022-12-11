@@ -205,7 +205,8 @@ ul {
 
 .menu_sub_list{
     transition: all 0.3s ease 0s;
-    position: absolute;
+    position: absolute; 
+    z-index: 4; 
     top: 25px;
     left: -100%;
     width: 100%;
